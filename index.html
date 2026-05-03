@@ -1,523 +1,643 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Md. Al Amin Pramanik — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Al Amin Pramanik — Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+    <!-- Noise overlay -->
+    <div class="noise"></div>
 
-  <!-- Noise overlay -->
-  <div class="noise"></div>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="nav-logo">
+        <span class="logo-bracket">[</span>AAP<span class="logo-bracket"
+          >]</span
+        >
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="files/resume.pdf" download class="nav-cta">
+        <i class="fa fa-download"></i> Resume
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-logo">
-      <span class="logo-bracket">[</span>AAP<span class="logo-bracket">]</span>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" class="mob-link">About</a></li>
+        <li><a href="#experience" class="mob-link">Experience</a></li>
+        <li><a href="#skills" class="mob-link">Skills</a></li>
+        <li><a href="#projects" class="mob-link">Projects</a></li>
+        <li><a href="#contact" class="mob-link">Contact</a></li>
+        <li>
+          <a href="files/resume.pdf" download class="mob-link"
+            >Download Resume</a
+          >
+        </li>
+      </ul>
     </div>
-    <ul class="nav-links">
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    <a href="files/resume.pdf" download class="nav-cta">
-      <i class="fa fa-download"></i> Resume
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#about" class="mob-link">About</a></li>
-      <li><a href="#experience" class="mob-link">Experience</a></li>
-      <li><a href="#skills" class="mob-link">Skills</a></li>
-      <li><a href="#projects" class="mob-link">Projects</a></li>
-      <li><a href="#contact" class="mob-link">Contact</a></li>
-      <li><a href="files/resume.pdf" download class="mob-link">Download Resume</a></li>
-    </ul>
-  </div>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-text">AL AMIN</div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-name">
+          <span class="line-reveal">Md. Al Amin</span>
+          <span class="line-reveal delay-1">Pramanik</span>
+        </h1>
+        <div class="hero-roles">
+          <span class="role-tag">Sales Executive</span>
+          <span class="role-divider">·</span>
+          <span class="role-tag">Software Engineer</span>
+          <span class="role-divider">·</span>
+          <span class="role-tag">Data Analyst</span>
+        </div>
+        <p class="hero-desc fade-in-up delay-2">
+          Dynamic professional bridging technical depth and client
+          communication. 3 years crafting software solutions and managing
+          international client relations from Dhaka, Bangladesh.
+        </p>
+        <div class="hero-actions fade-in-up delay-3">
+          <a href="#contact" class="btn-primary"
+            >Get In Touch <i class="fa fa-arrow-right"></i
+          ></a>
+          <a href="#projects" class="btn-ghost">View Projects</a>
+        </div>
+        <div class="hero-stats fade-in-up delay-4">
+          <div class="stat">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">44</span>
+            <span class="stat-label">GitHub Repos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">CEH</span>
+            <span class="stat-label">Certified</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap fade-in-up delay-2">
+        <div class="image-frame">
+          <img
+            src="images/profile.jpg"
+            alt="Md. Al Amin Pramanik"
+            class="profile-img"
+            onerror="this.parentElement.classList.add('no-image')"
+          />
+          <div class="image-placeholder">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+        <div class="image-accent"></div>
+        <div class="image-badge">
+          <i class="fab fa-github"></i>
+          <span>44 Repos</span>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-text">AL AMIN</div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for opportunities
-      </div>
-      <h1 class="hero-name">
-        <span class="line-reveal">Md. Al Amin</span>
-        <span class="line-reveal delay-1">Pramanik</span>
-      </h1>
-      <div class="hero-roles">
-        <span class="role-tag">Sales Executive</span>
-        <span class="role-divider">·</span>
-        <span class="role-tag">Software Engineer</span>
-        <span class="role-divider">·</span>
-        <span class="role-tag">Data Analyst</span>
-      </div>
-      <p class="hero-desc fade-in-up delay-2">
-        Dynamic professional bridging technical depth and client communication. 
-        3 years crafting software solutions and managing international client relations from Dhaka, Bangladesh.
-      </p>
-      <div class="hero-actions fade-in-up delay-3">
-        <a href="#contact" class="btn-primary">Get In Touch <i class="fa fa-arrow-right"></i></a>
-        <a href="#projects" class="btn-ghost">View Projects</a>
-      </div>
-      <div class="hero-stats fade-in-up delay-4">
-        <div class="stat">
-          <span class="stat-num">3+</span>
-          <span class="stat-label">Years Exp.</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">44</span>
-          <span class="stat-label">GitHub Repos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">CEH</span>
-          <span class="stat-label">Certified</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-image-wrap fade-in-up delay-2">
-      <div class="image-frame">
-        <img src="images/profile.jpg" alt="Md. Al Amin Pramanik" class="profile-img" onerror="this.parentElement.classList.add('no-image')" />
-        <div class="image-placeholder">
-          <i class="fa fa-user"></i>
-        </div>
-      </div>
-      <div class="image-accent"></div>
-      <div class="image-badge">
-        <i class="fab fa-github"></i>
-        <span>44 Repos</span>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-label">01 — About</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="section-title">Who I Am</h2>
-          <p>
-            I'm a multidisciplinary professional from Dhaka, Bangladesh with a B.Sc. in Computer Science from Daffodil International University (2025). 
-            My career spans software engineering, data analysis, and international sales — giving me a unique perspective where technical knowledge meets business communication.
-          </p>
-          <p>
-            As a Certified Ethical Hacker (CEH) under EC-Council, I bring a security-conscious mindset to every project. 
-            I've led teams, built full-stack applications, automated data pipelines, and managed client communications across borders.
-          </p>
-          <div class="about-highlights">
-            <div class="highlight">
-              <i class="fa fa-map-marker-alt"></i>
-              Dhaka, Bangladesh
-            </div>
-            <div class="highlight">
-              <i class="fa fa-envelope"></i>
-              dev.mdalaminpramanik@gmail.com
-            </div>
-            <div class="highlight">
-              <i class="fa fa-phone"></i>
-              +880 1636-454560
-            </div>
-            <div class="highlight">
-              <i class="fab fa-linkedin"></i>
-              in/md-al-amin-pramanik
-            </div>
-          </div>
-        </div>
-        <div class="about-certs">
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fa fa-shield-alt"></i></div>
-            <div>
-              <strong>Certified Ethical Hacker</strong>
-              <span>EC-Council · CEH</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fa fa-trophy"></i></div>
-            <div>
-              <strong>DASPIB 2023</strong>
-              <span>Advanced Security Professional</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fa fa-robot"></i></div>
-            <div>
-              <strong>Robotics Competition</strong>
-              <span>DIU · 2023</span>
-            </div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fa fa-code"></i></div>
-            <div>
-              <strong>CPC Programming Contest</strong>
-              <span>DIU · 2019, 2020, 2022</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="section experience" id="experience">
-    <div class="container">
-      <div class="section-label">02 — Experience</div>
-      <h2 class="section-title">Where I've Worked</h2>
-      <div class="timeline">
-
-        <div class="timeline-item active">
-          <div class="timeline-dot"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">June 2025 — Present</span>
-            <span class="timeline-status current">Current</span>
-          </div>
-          <div class="timeline-card">
-            <div class="tc-header">
-              <div>
-                <h3>Sales Executive (Foreign Communicator)</h3>
-                <span class="company">Softvence Agency · Mohkhali, Dhaka</span>
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-label">01 — About</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-title">Who I Am</h2>
+            <p>
+              I'm a multidisciplinary professional from Dhaka, Bangladesh with a
+              B.Sc. in Computer Science from Daffodil International University
+              (2025). My career spans software engineering, data analysis, and
+              international sales, giving me a unique perspective where
+              technical knowledge meets business communication.
+            </p>
+            <p>
+              As a Certified Ethical Hacker (CEH) under EC-Council, I bring a
+              security-conscious mindset to every project. I've led teams, built
+              full-stack applications, automated data pipelines, and managed
+              client communications across borders.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight">
+                <i class="fa fa-map-marker-alt"></i>
+                Dhaka, Bangladesh
               </div>
-              <div class="tc-icon"><i class="fa fa-globe"></i></div>
-            </div>
-            <ul class="tc-points">
-              <li>Managing international client communications across software and CMS projects</li>
-              <li>Gathering and analyzing software requirements, translating needs into structured specifications</li>
-              <li>Negotiating deals and maintaining strong long-term client relationships</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Jan 2024 — Oct 2024</span>
-          </div>
-          <div class="timeline-card">
-            <div class="tc-header">
-              <div>
-                <h3>Software Engineer</h3>
-                <span class="company">ATC Tech Limited · Rajshahi Hi-tech Park</span>
+              <div class="highlight">
+                <i class="fa fa-envelope"></i>
+                dev.mdalaminpramanik@gmail.com
               </div>
-              <div class="tc-icon"><i class="fa fa-laptop-code"></i></div>
-            </div>
-            <ul class="tc-points">
-              <li>Developed "NGO" — a full-stack system using Node.js backend and React frontend</li>
-              <li>Led team to build "Smart Petrol Pump" comprehensive software solution</li>
-              <li>Engineered and deployed RESTful APIs for large-scale SaaS platforms, enabling third-party service integration</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Jan 2023 — Dec 2024</span>
-          </div>
-          <div class="timeline-card">
-            <div class="tc-header">
-              <div>
-                <h3>Data Analyst</h3>
-                <span class="company">Intelligent Image Management Limited · Badda, Dhaka</span>
+              <div class="highlight">
+                <i class="fa fa-phone"></i>
+                +880 1636-454560
               </div>
-              <div class="tc-icon"><i class="fa fa-chart-bar"></i></div>
-            </div>
-            <ul class="tc-points">
-              <li>Analyzed large datasets using SQL and Python to generate actionable insights for product development</li>
-              <li>Developed automated data pipelines that streamlined collection, validation, and processing workflows</li>
-              <li>Delivered timely analytics to stakeholders across multidisciplinary teams</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section-label">03 — Skills</div>
-      <h2 class="section-title">Technical Arsenal</h2>
-      <div class="skills-grid">
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-code"></i>
-            <h4>Programming Languages</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">C</span>
-            <span class="tag">C++</span>
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Dart</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-globe"></i>
-            <h4>Web & Mobile</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">React.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express.js</span>
-            <span class="tag">Flutter</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-database"></i>
-            <h4>Data & Databases</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">OpenCV</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-shield-alt"></i>
-            <h4>Cybersecurity</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag highlight-tag">CEH Certified</span>
-            <span class="tag">DASPIB</span>
-            <span class="tag">Ethical Hacking</span>
-            <span class="tag">Network Security</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-tools"></i>
-            <h4>Tools & Concepts</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">Git / GitHub</span>
-            <span class="tag">SDLC</span>
-            <span class="tag">OOP</span>
-            <span class="tag">DSA</span>
-            <span class="tag">UML</span>
-            <span class="tag">Cisco Packet Tracer</span>
-            <span class="tag">Arduino</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="sg-header">
-            <i class="fa fa-paint-brush"></i>
-            <h4>Design & Office</h4>
-          </div>
-          <div class="skill-tags">
-            <span class="tag">UI/UX Design</span>
-            <span class="tag">Graphics Design</span>
-            <span class="tag">Animation</span>
-            <span class="tag">MS Office</span>
-            <span class="tag">Google Workspace</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section-label">04 — Projects</div>
-      <h2 class="section-title">Featured Work</h2>
-      <div class="projects-grid">
-
-        <div class="project-card featured">
-          <div class="pc-top">
-            <div class="pc-icon"><i class="fa fa-hands-helping"></i></div>
-            <div class="pc-links">
-              <a href="https://github.com/dev-al-amin-pramanik/NGO" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <div class="highlight">
+                <i class="fab fa-linkedin"></i>
+                in/md-al-amin-pramanik
+              </div>
             </div>
           </div>
-          <h3>NGO Management System</h3>
-          <p>Full-stack web application built with Node.js (backend) and React (frontend) to manage NGO operations, member records, and project tracking.</p>
-          <div class="pc-tech">
-            <span>Node.js</span><span>React</span><span>JavaScript</span><span>REST API</span>
-          </div>
-          <span class="pc-featured-badge">Team Lead</span>
-        </div>
-
-        <div class="project-card featured">
-          <div class="pc-top">
-            <div class="pc-icon"><i class="fa fa-gas-pump"></i></div>
-            <div class="pc-links">
-              <a href="https://github.com/dev-al-amin-pramanik/Smart_Petrol_Pump" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <div class="about-certs">
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fa fa-shield-alt"></i></div>
+              <div>
+                <strong>Certified Ethical Hacker</strong>
+                <span>EC-Council · CEH</span>
+              </div>
             </div>
-          </div>
-          <h3>Smart Petrol Pump</h3>
-          <p>Comprehensive smart petrol pump management system with digital metering, automated billing, inventory control, and reporting dashboards.</p>
-          <div class="pc-tech">
-            <span>JavaScript</span><span>Node.js</span><span>MySQL</span>
-          </div>
-          <span class="pc-featured-badge">Team Lead</span>
-        </div>
-
-        <div class="project-card">
-          <div class="pc-top">
-            <div class="pc-icon"><i class="fa fa-building"></i></div>
-            <div class="pc-links">
-              <a href="https://github.com/dev-al-amin-pramanik/ATC-Tech-Website" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fa fa-trophy"></i></div>
+              <div>
+                <strong>DASPIB 2023</strong>
+                <span>Advanced Security Professional</span>
+              </div>
             </div>
-          </div>
-          <h3>ATC Tech Website</h3>
-          <p>Corporate website developed for ATC Tech Limited showcasing services, team, and portfolio with modern responsive design.</p>
-          <div class="pc-tech">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-
-        <div class="project-card github-cta">
-          <div class="pc-top">
-            <div class="pc-icon"><i class="fab fa-github"></i></div>
-          </div>
-          <h3>More on GitHub</h3>
-          <p>Explore all 44 repositories including experiments in data analysis, web development, mobile apps, and security tools.</p>
-          <a href="https://github.com/dev-al-amin-pramanik" target="_blank" class="btn-primary small">
-            View All Repos <i class="fa fa-external-link-alt"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section class="section education" id="education">
-    <div class="container">
-      <div class="section-label">05 — Education</div>
-      <h2 class="section-title">Academic Background</h2>
-      <div class="edu-cards">
-        <div class="edu-card main-edu">
-          <div class="edu-icon"><i class="fa fa-graduation-cap"></i></div>
-          <div class="edu-info">
-            <span class="edu-year">2025</span>
-            <h3>B.Sc. in Computer Science & Engineering</h3>
-            <span class="edu-uni">Daffodil International University · Savar, Dhaka</span>
-            <div class="edu-gpa">CGPA: 3.00</div>
-          </div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-icon"><i class="fa fa-school"></i></div>
-          <div class="edu-info">
-            <span class="edu-year">2018</span>
-            <h3>HSC — Science</h3>
-            <span class="edu-uni">Mosjid Mission Academy School & College · Rajshahi</span>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fa fa-robot"></i></div>
+              <div>
+                <strong>Robotics Competition</strong>
+                <span>DIU · 2023</span>
+              </div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon"><i class="fa fa-code"></i></div>
+              <div>
+                <strong>CPC Programming Contest</strong>
+                <span>DIU · 2019, 2020, 2022</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section-label">06 — Contact</div>
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="contact-intro">
-        Whether it's a project, opportunity, or just a conversation — I'm always open to connecting.
-      </p>
-      <div class="contact-grid">
-        <div class="contact-links">
-          <a href="mailto:dev.mdalaminpramanik@gmail.com" class="contact-item">
-            <div class="ci-icon"><i class="fa fa-envelope"></i></div>
-            <div>
-              <span class="ci-label">Email</span>
-              <span class="ci-value">dev.mdalaminpramanik@gmail.com</span>
+    <!-- Experience -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-label">02 — Experience</div>
+        <h2 class="section-title">Where I've Worked</h2>
+        <div class="timeline">
+          <div class="timeline-item active">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-date">June 2025 — Present</span>
+              <span class="timeline-status current">Current</span>
             </div>
-            <i class="fa fa-arrow-right ci-arrow"></i>
-          </a>
-          <a href="tel:+8801636454560" class="contact-item">
-            <div class="ci-icon"><i class="fa fa-phone"></i></div>
-            <div>
-              <span class="ci-label">Phone</span>
-              <span class="ci-value">+880 1636-454560</span>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <h3>Sales Executive (Foreign Communicator)</h3>
+                  <span class="company"
+                    >Softvence Agency · Mohkhali, Dhaka</span
+                  >
+                </div>
+                <div class="tc-icon"><i class="fa fa-globe"></i></div>
+              </div>
+              <ul class="tc-points">
+                <li>
+                  Managing international client communications across software
+                  and CMS projects
+                </li>
+                <li>
+                  Gathering and analyzing software requirements, translating
+                  needs into structured specifications
+                </li>
+                <li>
+                  Negotiating deals and maintaining strong long-term client
+                  relationships
+                </li>
+              </ul>
             </div>
-            <i class="fa fa-arrow-right ci-arrow"></i>
-          </a>
-          <a href="https://linkedin.com/in/md-al-amin-pramanik" target="_blank" class="contact-item">
-            <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
-            <div>
-              <span class="ci-label">LinkedIn</span>
-              <span class="ci-value">in/md-al-amin-pramanik</span>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-date">Jan 2024 — Oct 2024</span>
             </div>
-            <i class="fa fa-arrow-right ci-arrow"></i>
-          </a>
-          <a href="https://github.com/dev-al-amin-pramanik" target="_blank" class="contact-item">
-            <div class="ci-icon"><i class="fab fa-github"></i></div>
-            <div>
-              <span class="ci-label">GitHub</span>
-              <span class="ci-value">dev-al-amin-pramanik</span>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <h3>Software Engineer</h3>
+                  <span class="company"
+                    >ATC Tech Limited · Rajshahi Hi-tech Park</span
+                  >
+                </div>
+                <div class="tc-icon"><i class="fa fa-laptop-code"></i></div>
+              </div>
+              <ul class="tc-points">
+                <li>
+                  Developed "NGO" — a full-stack system using Node.js backend
+                  and React frontend
+                </li>
+                <li>
+                  Led team to build "Smart Petrol Pump" comprehensive software
+                  solution
+                </li>
+                <li>
+                  Engineered and deployed RESTful APIs for large-scale SaaS
+                  platforms, enabling third-party service integration
+                </li>
+              </ul>
             </div>
-            <i class="fa fa-arrow-right ci-arrow"></i>
-          </a>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-meta">
+              <span class="timeline-date">Jan 2023 — Dec 2024</span>
+            </div>
+            <div class="timeline-card">
+              <div class="tc-header">
+                <div>
+                  <h3>Data Analyst</h3>
+                  <span class="company"
+                    >Intelligent Image Management Limited · Badda, Dhaka</span
+                  >
+                </div>
+                <div class="tc-icon"><i class="fa fa-chart-bar"></i></div>
+              </div>
+              <ul class="tc-points">
+                <li>
+                  Analyzed large datasets using SQL and Python to generate
+                  actionable insights for product development
+                </li>
+                <li>
+                  Developed automated data pipelines that streamlined
+                  collection, validation, and processing workflows
+                </li>
+                <li>
+                  Delivered timely analytics to stakeholders across
+                  multidisciplinary teams
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="resume-cta">
-          <div class="rc-inner">
-            <i class="fa fa-file-pdf"></i>
-            <h3>Download My Resume</h3>
-            <p>Get a full PDF copy of my resume with complete work history and credentials.</p>
-            <a href="files/resume.pdf" download class="btn-primary">
-              <i class="fa fa-download"></i> Download Resume
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-label">03 — Skills</div>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-code"></i>
+              <h4>Programming Languages</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Dart</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-globe"></i>
+              <h4>Web & Mobile</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">Flutter</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-database"></i>
+              <h4>Data & Databases</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">OpenCV</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-shield-alt"></i>
+              <h4>Cybersecurity</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag highlight-tag">CEH Certified</span>
+              <span class="tag">DASPIB</span>
+              <span class="tag">Ethical Hacking</span>
+              <span class="tag">Network Security</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-tools"></i>
+              <h4>Tools & Concepts</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">SDLC</span>
+              <span class="tag">OOP</span>
+              <span class="tag">DSA</span>
+              <span class="tag">UML</span>
+              <span class="tag">Cisco Packet Tracer</span>
+              <span class="tag">Arduino</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="sg-header">
+              <i class="fa fa-paint-brush"></i>
+              <h4>Design & Office</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">UI/UX Design</span>
+              <span class="tag">Graphics Design</span>
+              <span class="tag">Animation</span>
+              <span class="tag">MS Office</span>
+              <span class="tag">Google Workspace</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-label">04 — Projects</div>
+        <h2 class="section-title">Featured Work</h2>
+        <div class="projects-grid">
+          <div class="project-card featured">
+            <div class="pc-top">
+              <div class="pc-icon"><i class="fa fa-hands-helping"></i></div>
+              <div class="pc-links">
+                <a
+                  href="https://github.com/dev-al-amin-pramanik/NGO"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <h3>NGO Management System</h3>
+            <p>
+              Full-stack web application built with Node.js (backend) and React
+              (frontend) to manage NGO operations, member records, and project
+              tracking.
+            </p>
+            <div class="pc-tech">
+              <span>Node.js</span><span>React</span><span>JavaScript</span
+              ><span>REST API</span>
+            </div>
+            <span class="pc-featured-badge">Team Lead</span>
+          </div>
+
+          <div class="project-card featured">
+            <div class="pc-top">
+              <div class="pc-icon"><i class="fa fa-gas-pump"></i></div>
+              <div class="pc-links">
+                <a
+                  href="https://github.com/dev-al-amin-pramanik/Smart_Petrol_Pump"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <h3>Smart Petrol Pump</h3>
+            <p>
+              Comprehensive smart petrol pump management system with digital
+              metering, automated billing, inventory control, and reporting
+              dashboards.
+            </p>
+            <div class="pc-tech">
+              <span>JavaScript</span><span>Node.js</span><span>MySQL</span>
+            </div>
+            <span class="pc-featured-badge">Team Lead</span>
+          </div>
+
+          <div class="project-card">
+            <div class="pc-top">
+              <div class="pc-icon"><i class="fa fa-building"></i></div>
+              <div class="pc-links">
+                <a
+                  href="https://github.com/dev-al-amin-pramanik/ATC-Tech-Website"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <h3>ATC Tech Website</h3>
+            <p>
+              Corporate website developed for ATC Tech Limited showcasing
+              services, team, and portfolio with modern responsive design.
+            </p>
+            <div class="pc-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="project-card github-cta">
+            <div class="pc-top">
+              <div class="pc-icon"><i class="fab fa-github"></i></div>
+            </div>
+            <h3>More on GitHub</h3>
+            <p>
+              Explore all 44 repositories including experiments in data
+              analysis, web development, mobile apps, and security tools.
+            </p>
+            <a
+              href="https://github.com/dev-al-amin-pramanik"
+              target="_blank"
+              class="btn-primary small"
+            >
+              View All Repos <i class="fa fa-external-link-alt"></i>
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-logo"><span class="logo-bracket">[</span>AAP<span class="logo-bracket">]</span></span>
-        <p>Designed & Built by Md. Al Amin Pramanik · Dhaka, Bangladesh © 2025</p>
-        <div class="footer-socials">
-          <a href="https://github.com/dev-al-amin-pramanik" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/md-al-amin-pramanik" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:dev.mdalaminpramanik@gmail.com"><i class="fa fa-envelope"></i></a>
+    <!-- Education -->
+    <section class="section education" id="education">
+      <div class="container">
+        <div class="section-label">05 — Education</div>
+        <h2 class="section-title">Academic Background</h2>
+        <div class="edu-cards">
+          <div class="edu-card main-edu">
+            <div class="edu-icon"><i class="fa fa-graduation-cap"></i></div>
+            <div class="edu-info">
+              <span class="edu-year">2025</span>
+              <h3>B.Sc. in Computer Science & Engineering</h3>
+              <span class="edu-uni"
+                >Daffodil International University · Savar, Dhaka</span
+              >
+              <div class="edu-gpa">CGPA: 3.00</div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon"><i class="fa fa-school"></i></div>
+            <div class="edu-info">
+              <span class="edu-year">2018</span>
+              <h3>HSC — Science</h3>
+              <span class="edu-uni"
+                >Masjid Mission Academy School & College · Rajshahi</span
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-label">06 — Contact</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-intro">
+          Whether it's a project, opportunity, or just a conversation — I'm
+          always open to connecting.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-links">
+            <a
+              href="mailto:dev.mdalaminpramanik@gmail.com"
+              class="contact-item"
+            >
+              <div class="ci-icon"><i class="fa fa-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">dev.mdalaminpramanik@gmail.com</span>
+              </div>
+              <i class="fa fa-arrow-right ci-arrow"></i>
+            </a>
+            <a href="tel:+8801636454560" class="contact-item">
+              <div class="ci-icon"><i class="fa fa-phone"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <span class="ci-value">+880 1636-454560</span>
+              </div>
+              <i class="fa fa-arrow-right ci-arrow"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/md-al-amin-pramanik"
+              target="_blank"
+              class="contact-item"
+            >
+              <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <span class="ci-value"
+                  >ttps://linkedin.com/in/md-al-amin-pramanik</span
+                >
+              </div>
+              <i class="fa fa-arrow-right ci-arrow"></i>
+            </a>
+            <a
+              href="https://github.com/dev-al-amin-pramanik"
+              target="_blank"
+              class="contact-item"
+            >
+              <div class="ci-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <span class="ci-value">dev-al-amin-pramanik</span>
+              </div>
+              <i class="fa fa-arrow-right ci-arrow"></i>
+            </a>
+          </div>
+          <div class="resume-cta">
+            <div class="rc-inner">
+              <i class="fa fa-file-pdf"></i>
+              <h3>Download My Resume</h3>
+              <p>
+                Get a full PDF copy of my resume with complete work history and
+                credentials.
+              </p>
+              <a href="Md. Al Amin Pramanik.pdf" download class="btn-primary">
+                <i class="fa fa-download"></i> Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <span class="footer-logo"
+            ><span class="logo-bracket">[</span>AAP<span class="logo-bracket"
+              >]</span
+            ></span
+          >
+          <p>
+            Designed & Built by Md. Al Amin Pramanik · Dhaka, Bangladesh © 2025
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/dev-al-amin-pramanik" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/md-al-amin-pramanik"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:dev.mdalaminpramanik@gmail.com"
+              ><i class="fa fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
