@@ -36,9 +36,9 @@
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="files/resume.pdf" download class="nav-cta">
-        <i class="fa fa-download"></i> Resume
-      </a>
+      <button class="nav-cta" id="navResumeBtn">
+        <i class="fa fa-file-pdf"></i> Resume
+      </button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -53,9 +53,9 @@
         <li><a href="#projects" class="mob-link">Projects</a></li>
         <li><a href="#contact" class="mob-link">Contact</a></li>
         <li>
-          <a href="files/resume.pdf" download class="mob-link"
-            >Download Resume</a
-          >
+          <button class="mob-link mob-resume-btn" id="mobileResumeBtn">
+            View Resume
+          </button>
         </li>
       </ul>
     </div>
@@ -115,9 +115,7 @@
             class="profile-img"
             onerror="this.parentElement.classList.add('no-image')"
           />
-          <div class="image-placeholder">
-            <i class="fa fa-user"></i>
-          </div>
+          <div class="image-placeholder"><i class="fa fa-user"></i></div>
         </div>
         <div class="image-accent"></div>
         <div class="image-badge">
@@ -153,20 +151,16 @@
             </p>
             <div class="about-highlights">
               <div class="highlight">
-                <i class="fa fa-map-marker-alt"></i>
-                Dhaka, Bangladesh
+                <i class="fa fa-map-marker-alt"></i> Dhaka, Bangladesh
               </div>
               <div class="highlight">
-                <i class="fa fa-envelope"></i>
-                dev.mdalaminpramanik@gmail.com
+                <i class="fa fa-envelope"></i> dev.mdalaminpramanik@gmail.com
               </div>
               <div class="highlight">
-                <i class="fa fa-phone"></i>
-                +880 1636-454560
+                <i class="fa fa-phone"></i> +880 1636-454560
               </div>
               <div class="highlight">
-                <i class="fab fa-linkedin"></i>
-                in/md-al-amin-pramanik
+                <i class="fab fa-linkedin"></i> in/md-al-amin-pramanik
               </div>
             </div>
           </div>
@@ -221,7 +215,7 @@
                 <div>
                   <h3>Sales Executive (Foreign Communicator)</h3>
                   <span class="company"
-                    >Softvence Agency · Mohkhali, Dhaka</span
+                    >Softvence Agency · Mohakhali, Dhaka</span
                   >
                 </div>
                 <div class="tc-icon"><i class="fa fa-globe"></i></div>
@@ -242,7 +236,6 @@
               </ul>
             </div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-meta">
@@ -274,7 +267,6 @@
               </ul>
             </div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-meta">
@@ -322,83 +314,69 @@
               <h4>Programming Languages</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag">C</span>
-              <span class="tag">C++</span>
-              <span class="tag">Python</span>
-              <span class="tag">Java</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Dart</span>
+              <span class="tag">C</span><span class="tag">C++</span
+              ><span class="tag">Python</span> <span class="tag">Java</span
+              ><span class="tag">JavaScript</span><span class="tag">Dart</span>
             </div>
           </div>
-
           <div class="skill-group">
             <div class="sg-header">
               <i class="fa fa-globe"></i>
               <h4>Web & Mobile</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">React.js</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Express.js</span>
-              <span class="tag">Flutter</span>
+              <span class="tag">HTML</span><span class="tag">CSS</span
+              ><span class="tag">React.js</span> <span class="tag">Node.js</span
+              ><span class="tag">Express.js</span
+              ><span class="tag">Flutter</span>
             </div>
           </div>
-
           <div class="skill-group">
             <div class="sg-header">
               <i class="fa fa-database"></i>
               <h4>Data & Databases</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag">MySQL</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Pandas</span>
-              <span class="tag">NumPy</span>
-              <span class="tag">OpenCV</span>
+              <span class="tag">MySQL</span><span class="tag">SQL</span
+              ><span class="tag">Pandas</span> <span class="tag">NumPy</span
+              ><span class="tag">OpenCV</span>
             </div>
           </div>
-
           <div class="skill-group">
             <div class="sg-header">
               <i class="fa fa-shield-alt"></i>
               <h4>Cybersecurity</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag highlight-tag">CEH Certified</span>
-              <span class="tag">DASPIB</span>
-              <span class="tag">Ethical Hacking</span>
-              <span class="tag">Network Security</span>
+              <span class="tag highlight-tag">CEH Certified</span
+              ><span class="tag">DASPIB</span>
+              <span class="tag">Ethical Hacking</span
+              ><span class="tag">Network Security</span>
             </div>
           </div>
-
           <div class="skill-group">
             <div class="sg-header">
               <i class="fa fa-tools"></i>
               <h4>Tools & Concepts</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag">Git / GitHub</span>
-              <span class="tag">SDLC</span>
-              <span class="tag">OOP</span>
-              <span class="tag">DSA</span>
-              <span class="tag">UML</span>
-              <span class="tag">Cisco Packet Tracer</span>
-              <span class="tag">Arduino</span>
+              <span class="tag">Git / GitHub</span><span class="tag">SDLC</span
+              ><span class="tag">OOP</span> <span class="tag">DSA</span
+              ><span class="tag">UML</span>
+              <span class="tag">Cisco Packet Tracer</span
+              ><span class="tag">Arduino</span>
             </div>
           </div>
-
           <div class="skill-group">
             <div class="sg-header">
               <i class="fa fa-paint-brush"></i>
               <h4>Design & Office</h4>
             </div>
             <div class="skill-tags">
-              <span class="tag">UI/UX Design</span>
-              <span class="tag">Graphics Design</span>
-              <span class="tag">Animation</span>
-              <span class="tag">MS Office</span>
+              <span class="tag">UI/UX Design</span
+              ><span class="tag">Graphics Design</span>
+              <span class="tag">Animation</span
+              ><span class="tag">MS Office</span>
               <span class="tag">Google Workspace</span>
             </div>
           </div>
@@ -436,7 +414,6 @@
             </div>
             <span class="pc-featured-badge">Team Lead</span>
           </div>
-
           <div class="project-card featured">
             <div class="pc-top">
               <div class="pc-icon"><i class="fa fa-gas-pump"></i></div>
@@ -460,7 +437,6 @@
             </div>
             <span class="pc-featured-badge">Team Lead</span>
           </div>
-
           <div class="project-card">
             <div class="pc-top">
               <div class="pc-icon"><i class="fa fa-building"></i></div>
@@ -482,7 +458,6 @@
               <span>HTML</span><span>CSS</span><span>JavaScript</span>
             </div>
           </div>
-
           <div class="project-card github-cta">
             <div class="pc-top">
               <div class="pc-icon"><i class="fab fa-github"></i></div>
@@ -574,7 +549,7 @@
               <div>
                 <span class="ci-label">LinkedIn</span>
                 <span class="ci-value"
-                  >ttps://linkedin.com/in/md-al-amin-pramanik</span
+                  >linkedin.com/in/md-al-amin-pramanik</span
                 >
               </div>
               <i class="fa fa-arrow-right ci-arrow"></i>
@@ -595,14 +570,23 @@
           <div class="resume-cta">
             <div class="rc-inner">
               <i class="fa fa-file-pdf"></i>
-              <h3>Download My Resume</h3>
+              <h3>My Resume</h3>
               <p>
-                Get a full PDF copy of my resume with complete work history and
-                credentials.
+                View online or download a full PDF copy with complete work
+                history and credentials.
               </p>
-              <a href="Md. Al Amin Pramanik.pdf" download class="btn-primary">
-                <i class="fa fa-download"></i> Download Resume
-              </a>
+              <div class="rc-btns">
+                <button class="btn-ghost rc-view-btn" id="contactResumeViewBtn">
+                  <i class="fa fa-eye"></i> View Resume
+                </button>
+                <a
+                  href="files/Al Amin Pramanik.pdf"
+                  download="Al_Amin_Pramanik_Resume.pdf"
+                  class="btn-primary"
+                >
+                  <i class="fa fa-download"></i> Download
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -612,6 +596,34 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
+        <!-- Resume Bar -->
+        <div class="footer-resume-bar">
+          <div class="footer-resume-left">
+            <div class="footer-resume-icon"><i class="fa fa-file-pdf"></i></div>
+            <div>
+              <span class="footer-resume-title"
+                >Md. Al Amin Pramanik — Resume</span
+              >
+              <span class="footer-resume-sub"
+                >View online or download a PDF copy of my full resume</span
+              >
+            </div>
+          </div>
+          <div class="footer-resume-actions">
+            <button class="btn-ghost footer-view-btn" id="footerResumeViewBtn">
+              <i class="fa fa-eye"></i> View Resume
+            </button>
+            <a
+              href="files/Al Amin Pramanik.pdf"
+              download="Al_Amin_Pramanik_Resume.pdf"
+              class="btn-primary footer-dl-btn"
+            >
+              <i class="fa fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-inner">
           <span class="footer-logo"
             ><span class="logo-bracket">[</span>AAP<span class="logo-bracket"
@@ -637,6 +649,40 @@
         </div>
       </div>
     </footer>
+
+    <!-- Resume PDF Modal -->
+    <div class="resume-modal-overlay" id="resumeModal">
+      <div class="resume-modal-box">
+        <div class="resume-modal-header">
+          <span class="resume-modal-title">
+            <i class="fa fa-file-pdf"></i> Md. Al Amin Pramanik — Resume
+          </span>
+          <div class="resume-modal-actions">
+            <a
+              href="files/Al Amin Pramanik.pdf"
+              download="Al_Amin_Pramanik_Resume.pdf"
+              class="resume-dl-btn"
+            >
+              <i class="fa fa-download"></i> Download
+            </a>
+            <button
+              class="resume-close-btn"
+              id="resumeCloseBtn"
+              aria-label="Close"
+            >
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="resume-modal-body">
+          <iframe
+            src="files/Al Amin Pramanik.pdf#toolbar=1&navpanes=0"
+            class="resume-iframe"
+            title="Resume PDF"
+          ></iframe>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

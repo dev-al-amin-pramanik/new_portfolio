@@ -23,7 +23,6 @@ function animateFollower() {
 }
 animateFollower();
 
-// Cursor hover effects
 document.querySelectorAll('a, button, .cert-card, .project-card, .contact-item, .skill-group').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.width = '16px';
@@ -41,16 +40,19 @@ document.querySelectorAll('a, button, .cert-card, .project-card, .contact-item, 
   });
 });
 
+// Hide cursor on touch devices
+if ('ontouchstart' in window) {
+  cursor.style.display = 'none';
+  cursorFollower.style.display = 'none';
+  document.body.style.cursor = 'auto';
+}
+
 // ===========================
-// NAVIGATION SCROLL EFFECT
+// NAVIGATION SCROLL
 // ===========================
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
+  nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // ===========================
@@ -59,12 +61,12 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
   hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.mob-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
@@ -72,7 +74,6 @@ document.querySelectorAll('.mob-link').forEach(link => {
   });
 });
 
-// Close on outside click
 document.addEventListener('click', (e) => {
   if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
     hamburger.classList.remove('open');
@@ -81,30 +82,74 @@ document.addEventListener('click', (e) => {
 });
 
 // ===========================
-// SCROLL REVEAL ANIMATION
+// RESUME PDF MODAL
+// ===========================
+const resumeModal = document.getElementById('resumeModal');
+const resumeCloseBtn = document.getElementById('resumeCloseBtn');
+
+function openResumeModal() {
+  resumeModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeResumeModal() {
+  resumeModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Buttons that open the modal
+const openBtns = [
+  document.getElementById('navResumeBtn'),
+  document.getElementById('mobileResumeBtn'),
+  document.getElementById('contactResumeViewBtn'),
+  document.getElementById('footerResumeViewBtn'),
+];
+
+openBtns.forEach(btn => {
+  if (btn) btn.addEventListener('click', openResumeModal);
+});
+
+// Close on X button
+if (resumeCloseBtn) resumeCloseBtn.addEventListener('click', closeResumeModal);
+
+// Close on overlay click (outside modal box)
+resumeModal.addEventListener('click', (e) => {
+  if (e.target === resumeModal) closeResumeModal();
+});
+
+// Close on ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && resumeModal.classList.contains('open')) {
+    closeResumeModal();
+  }
+});
+
+// ===========================
+// SCROLL REVEAL
 // ===========================
 const revealElements = document.querySelectorAll(
   '.about-grid, .timeline-item, .skill-group, .project-card, .edu-card, .contact-item, .resume-cta, .cert-card'
 );
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Stagger children in a grid
-      entry.target.style.transitionDelay = `${(Array.from(entry.target.parentElement.children).indexOf(entry.target)) * 80}ms`;
+      const siblings = Array.from(entry.target.parentElement.children);
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${idx * 80}ms`;
       entry.target.classList.add('reveal', 'visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
 revealElements.forEach(el => {
   el.classList.add('reveal');
-  observer.observe(el);
+  revealObserver.observe(el);
 });
 
 // ===========================
-// ACTIVE NAV LINK HIGHLIGHT
+// ACTIVE NAV LINK
 // ===========================
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -114,34 +159,26 @@ const sectionObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const id = entry.target.getAttribute('id');
       navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href') === `#${id}` 
-          ? 'var(--accent)' 
-          : '';
+        link.style.color = link.getAttribute('href') === `#${id}` ? 'var(--accent)' : '';
       });
     }
   });
 }, { threshold: 0.4 });
 
-sections.forEach(section => sectionObserver.observe(section));
+sections.forEach(s => sectionObserver.observe(s));
 
 // ===========================
-// TYPEWRITER EFFECT - Hero roles
+// HERO NAME FADE ON SCROLL
 // ===========================
-const roles = ['Sales Executive', 'Software Engineer', 'Data Analyst', 'CEH Certified'];
-let roleIndex = 0;
-
-// Subtle glow effect on hero name on scroll
 const heroName = document.querySelector('.hero-name');
 window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
   if (heroName) {
-    const opacity = Math.max(0, 1 - scrolled / 400);
-    heroName.style.opacity = opacity;
+    heroName.style.opacity = Math.max(0, 1 - window.scrollY / 400);
   }
 });
 
 // ===========================
-// SMOOTH ANCHOR SCROLL
+// SMOOTH SCROLL FOR ANCHORS
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -156,36 +193,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===========================
 // STATS COUNTER ANIMATION
 // ===========================
-function animateCounter(el, target, suffix = '') {
+function animateCounter(el, target) {
   let current = 0;
-  const duration = 1500;
-  const step = target / (duration / 16);
-
+  const step = target / (1500 / 16);
   const timer = setInterval(() => {
     current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
-    }
-    el.textContent = Math.floor(current) + suffix;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current);
   }, 16);
 }
 
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const statNums = entry.target.querySelectorAll('.stat-num');
-      statNums.forEach(el => {
+      entry.target.querySelectorAll('.stat-num').forEach(el => {
         const text = el.textContent.trim();
         if (text === '44') animateCounter(el, 44);
         else if (text === '3+') {
-          el.textContent = '0+';
           let n = 0;
-          const t = setInterval(() => {
-            n++;
-            el.textContent = n + '+';
-            if (n >= 3) clearInterval(t);
-          }, 400);
+          const t = setInterval(() => { n++; el.textContent = n + '+'; if (n >= 3) clearInterval(t); }, 400);
         }
       });
       statsObserver.unobserve(entry.target);
@@ -197,7 +223,7 @@ const heroStats = document.querySelector('.hero-stats');
 if (heroStats) statsObserver.observe(heroStats);
 
 // ===========================
-// SKILL TAGS HOVER RIPPLE
+// SKILL TAG CLICK RIPPLE
 // ===========================
 document.querySelectorAll('.tag').forEach(tag => {
   tag.addEventListener('click', function () {
@@ -207,39 +233,29 @@ document.querySelectorAll('.tag').forEach(tag => {
 });
 
 // ===========================
-// TIMELINE ITEMS — hover line glow
+// TIMELINE DOT HOVER GLOW
 // ===========================
 document.querySelectorAll('.timeline-item').forEach(item => {
+  const dot = item.querySelector('.timeline-dot');
   item.addEventListener('mouseenter', () => {
-    item.querySelector('.timeline-dot').style.boxShadow = '0 0 16px rgba(0,229,255,0.6)';
-    item.querySelector('.timeline-dot').style.borderColor = 'var(--accent)';
+    dot.style.boxShadow = '0 0 16px rgba(0,229,255,0.6)';
+    dot.style.borderColor = 'var(--accent)';
   });
   item.addEventListener('mouseleave', () => {
     if (!item.classList.contains('active')) {
-      item.querySelector('.timeline-dot').style.boxShadow = '';
-      item.querySelector('.timeline-dot').style.borderColor = '';
+      dot.style.boxShadow = '';
+      dot.style.borderColor = '';
     }
   });
 });
 
 // ===========================
-// PAGE LOAD ANIMATION
+// PAGE LOAD FADE IN
 // ===========================
 window.addEventListener('load', () => {
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 0.5s ease';
-  setTimeout(() => {
-    document.body.style.opacity = '1';
-  }, 50);
+  setTimeout(() => { document.body.style.opacity = '1'; }, 50);
 });
-
-// ===========================
-// PREVENT CURSOR ON TOUCH DEVICES
-// ===========================
-if ('ontouchstart' in window) {
-  cursor.style.display = 'none';
-  cursorFollower.style.display = 'none';
-  document.body.style.cursor = 'auto';
-}
 
 console.log('%c[AAP] Portfolio loaded successfully', 'color: #00e5ff; font-family: monospace; font-size: 14px;');
